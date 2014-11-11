@@ -6,6 +6,7 @@ alias du1='du -hs --max-depth=1'
 
 # reload bash scripts
 alias sbash='. ~/.bashrc'
+alias dotfiles='cd ~/repos/dotfiles'
 
 # some ls aliases
 alias ls='ls --color=auto -F'
@@ -17,6 +18,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # git aliases
-alias gc='git commit'
+alias gcm='git commit . -m '
 alias gpom='git push origin master'
 
