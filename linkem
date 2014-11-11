@@ -1,8 +1,10 @@
 #!/bin/bash
 
-rm -f ~/.bashrc ~/.bashprompt ~/.dircolors ~/.bash_aliases
+rm -f ~/.bashrc ~/.bashprompt ~/.dircolors ~/.bash_aliases ~/.gitconfig
+
 ln -s ~/repos/dotfiles/bashrc ~/.bashrc
 ln -s ~/repos/dotfiles/bashprompt ~/.bashprompt
 ln -s ~/repos/dotfiles/bash_aliases ~/.bash_aliases
 ln -s ~/repos/dotfiles/bashrc ~/.bashrc
 ln -s ~/repos/dotfiles/dircolors ~/.dircolors
+ln -s ~/repos/dotfiles/gitconfig ~/.gitconfig

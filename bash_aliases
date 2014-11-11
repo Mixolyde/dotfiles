@@ -1,11 +1,11 @@
 # aliases I like almost everywhere
 alias x=exit
-alias sdr=screen -D -R
-alias slist=screen -list
+alias sdr='screen -D -R'
+alias slist='screen -list'
 alias du1='du -hs --max-depth=1'
 
-# reload these aliases
-alias ra=. ~/.bash_aliases
+# reload bash scripts
+alias sbash='. ~/.bashrc'
 
 # some ls aliases
 alias ls='ls --color=auto -F'
@@ -15,8 +15,6 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-
 
 # git aliases
 alias gc='git commit'
