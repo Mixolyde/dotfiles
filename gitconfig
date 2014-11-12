@@ -6,3 +6,6 @@
 	autocrlf = input
 [color]
 	ui = true
+[alias]
+	today      = log --since=midnight --oneline
+	pom        = push origin master
