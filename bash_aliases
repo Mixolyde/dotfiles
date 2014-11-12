@@ -18,6 +18,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # git aliases
-alias gcm='git commit . -m '
+alias g='git'
+alias gcm='git commit -a -m '
 alias gpom='git push origin master'
 
