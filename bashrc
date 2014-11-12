@@ -32,6 +32,10 @@ shopt -s checkwinsize
 
 eval "$(dircolors -b ~/.dircolors)"
 
+# tab-completion in shell
+alias service='sudo /sbin/service'
+complete -W "$(ls -1 /etc/init.d)" service
+
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
@@ -47,3 +51,12 @@ fi
 if [ -f ~/.bash_local ]; then
   . ~/.bash_local
 fi
+
+# User functions
+# tarfold will tar and gzip a full directory by name, appending the date
+function tarfold {
+  directory=`echo "$1" | sed 's/\/\+$//'`;
+  tarname=$directory.`date '+%Y%m%d-%H%M --utc'`.tar.gz
+  tar -cvzf $tarname $directory;
+  echo "$directory tar'd and gzip'd to $tarname"
+};
