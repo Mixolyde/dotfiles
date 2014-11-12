@@ -1,5 +1,11 @@
-vbell on
-defscrollback 5000
-startup_message off
+# screen control file
+
+vbell on               # turn off the visual bell
+defscrollback 5000     # set the scrollback buffer
+startup_message off    # turn off the splash screen 
+
+# set the caption for all windows/regions
 caption always "%{= kb}%?%F%{.B}%?%3n%?%F*%: %?%f %t"
+
+# set the hardware status line at the bottom of the screen
 hardstatus alwayslastline "%{= kb}[ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%= %{b}][%{B} %H %{W}%l %{b}][%{B} %d.%m.%Y %{W}%0c %{b}]"
