@@ -1,0 +1,5 @@
+vbell on
+defscrollback 5000
+startup_message off
+caption always "%{= kb}%?%F%{.B}%?%3n%?%F*%: %?%f %t"
+hardstatus alwayslastline "%{= kb}[ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%= %{b}][%{B} %H %{W}%l %{b}][%{B} %d.%m.%Y %{W}%0c %{b}]"
