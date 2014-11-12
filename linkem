@@ -9,3 +9,5 @@ ln -s ~/repos/dotfiles/bashrc ~/.bashrc
 ln -s ~/repos/dotfiles/dircolors ~/.dircolors
 ln -s ~/repos/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/repos/dotfiles/screenrc ~/.screenrc
+
+source ~/.bashrc
