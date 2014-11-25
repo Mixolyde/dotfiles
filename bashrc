@@ -10,7 +10,7 @@ set -o ignoreeof
 export EDITOR=vim
 export PATH=/usr/local/bin:~/bin:$PATH
 
-export JAVA_HOME=/usr/lib/jvm/java-1.7.0
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -48,10 +48,6 @@ if [ -f ~/.bashprompt ]; then
   . ~/.bashprompt
 fi
 
-if [ -f ~/.bash_local ]; then
-  . ~/.bash_local
-fi
-
 # User functions
 # tarfold will tar and gzip a full directory by name, appending the date
 function tarfold {
@@ -60,3 +56,8 @@ function tarfold {
   tar -cvzf $tarname $directory;
   echo "$directory tar'd and gzip'd to $tarname"
 };
+
+# run bash_local last in case it has to overwrite
+if [ -f ~/.bash_local ]; then
+  . ~/.bash_local
+fi
