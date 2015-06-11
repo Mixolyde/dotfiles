@@ -7,5 +7,12 @@
 [color]
 	ui = true
 [alias]
-	today      = log --since=midnight --oneline
+  c          = commit -a
+  cm         = commit -a -m
+  pl         = log --graph --pretty=pformat --abbrev-commit
 	pom        = push origin master
+  s          = status
+	today      = log --since=midnight --pretty=pformat
+[pretty]
+  pformat    = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+  
