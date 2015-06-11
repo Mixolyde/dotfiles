@@ -10,6 +10,7 @@
   c          = commit -a
   cm         = commit -a -m
   pl         = log --graph --pretty=pformat --abbrev-commit
+  pll        = log --graph --pretty=pformat --abbrev-commit --numstat
 	pom        = push origin master
   s          = status
 	today      = log --since=midnight --pretty=pformat
