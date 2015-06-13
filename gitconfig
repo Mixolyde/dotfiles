@@ -7,13 +7,13 @@
 [color]
 	ui = true
 [alias]
-  c          = commit -a
-  cm         = commit -a -m
-  pl         = log --graph --pretty=pformat --abbrev-commit
-  pll        = log --graph --pretty=pformat --abbrev-commit --numstat
+	c          = commit -a
+	cm         = commit -a -m
+	pl         = log --graph --pretty=pformat --abbrev-commit
+	pll        = log --graph --pretty=pformat --abbrev-commit --numstat
 	pom        = push origin master
-  s          = status
+	s          = status
 	today      = log --since=midnight --pretty=pformat
 [pretty]
-  pformat    = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
-  
+	pformat    = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
