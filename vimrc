@@ -1,11 +1,13 @@
 set nocompatible
 
+" Basics {{{
 set backspace=indent,eol,start
 set nobackup  " DON'T keep a backup file
 set encoding=utf-8
 set history=50  " keep 50 lines of command line history
+" }}}
 
-" Leader mappings {
+" Leader mappings {{{
 let mapleader = ","
 " v to select just pasted text for manipulation
 nnoremap <leader>v V`]
@@ -15,7 +17,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>ft Vatzf
 " q to hard rewrap paragraphs of text
 nnoremap <leader>q gqip
-" }
+" }}}
 
 " some sane tab settings
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -30,6 +32,7 @@ set showcmd  " display incomplete commands
 set showmode  " always show mode
 set wildmenu  " show completion menu
 set wildmode=list:longest
+set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
 
 " set searching
 nnoremap / /\v
@@ -55,6 +58,8 @@ color desert
 set laststatus=2
 " Toggle paste mode via F2 to prevent cascading indents
 set pastetoggle=<F2>
+" Toggle white space chars
+noremap <F11> :set list!<CR>
 " set tab key to switch to next window
 inoremap <tab> <ESC>:wincmd w<CR>
 nnoremap <tab> :wincmd w<CR>

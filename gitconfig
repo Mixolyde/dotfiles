@@ -1,19 +1,20 @@
 [user]
-	name = Brian Grey
-	email = mixolyde@gmail.com
+  name = Brian Grey
+  email = mixolyde@gmail.com
 [core]
-	editor = vim
-	autocrlf = input
+  editor = vim
+  autocrlf = input
 [color]
-	ui = true
+  ui = true
 [alias]
-	c          = commit -a
-	cm         = commit -a -m
-	pl         = log --graph --pretty=pformat --abbrev-commit
-	pll        = log --graph --pretty=pformat --abbrev-commit --numstat
-	pom        = push origin master
-	s          = status
-	today      = log --since=midnight --pretty=pformat
+  c          = commit -a
+  caa        = !git c --amend -C HEAD
+  cm         = !git c -m
+  pl         = log --graph --pretty=pformat
+  pll        = !git pl --stat
+  pom        = push origin master
+  s          = status
+  today      = log --since=midnight --pretty=pformat
 [pretty]
-	pformat    = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+  pformat    = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 
