@@ -1,7 +1,7 @@
 " File: vimrc (copy to ~/.vimrc or ~\_vimrc
 " Author: Brian G.
 
-set nocompatible " never learned Vim, no need to stay compatible
+set nocompatible      " never learned Vi, no need to stay compatible
 
 " Basics {{{
 set backspace=indent,eol,start
@@ -29,13 +29,13 @@ set cindent
 " }}}
 
 " Visual Appearances {{{
-syntax on    " color highlight code syntax
-set number  " show line numbers
-set ruler  " show the cursor position all the time
+syntax on        " color highlight code syntax
+set number       " show line numbers
+set ruler        " show the cursor position all the time
 set scrolloff=5  " 5 lines before and after current line when scrolling
-set showcmd  " display incomplete commands
-set showmode  " always show mode
-set wildmenu  " show completion menu
+set showcmd      " display incomplete commands
+set showmode     " always show mode
+set wildmenu     " show completion menu
 set wildmode=list:longest
 " How to show whitespace chars
 set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
