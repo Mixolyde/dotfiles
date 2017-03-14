@@ -8,7 +8,6 @@ echo $PWD
 ln -s $PWD/bashrc ~/.bashrc
 ln -s $PWD/bashprompt ~/.bashprompt
 ln -s $PWD/bash_aliases ~/.bash_aliases
-ln -s $PWD/bashrc ~/.bashrc
 ln -s $PWD/dircolors ~/.dircolors
 ln -s $PWD/gitconfig ~/.gitconfig
 ln -s $PWD/screenrc ~/.screenrc
