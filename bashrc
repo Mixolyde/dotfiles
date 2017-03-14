@@ -34,7 +34,10 @@ eval "$(dircolors -b ~/.dircolors)"
 
 # tab-completion in shell
 alias service='sudo /sbin/service'
-complete -W "$(ls -1 /etc/init.d)" service
+
+if [ -d /etc/init.d ]; then
+  complete -W "$(ls -1 /etc/init.d)" service
+fi
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion

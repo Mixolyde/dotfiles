@@ -2,13 +2,16 @@
 
 rm -f ~/.bashrc ~/.bashprompt ~/.dircolors ~/.bash_aliases ~/.gitconfig ~/.screenrc ~/.vimrc
 
-ln -s ~/repos/dotfiles/bashrc ~/.bashrc
-ln -s ~/repos/dotfiles/bashprompt ~/.bashprompt
-ln -s ~/repos/dotfiles/bash_aliases ~/.bash_aliases
-ln -s ~/repos/dotfiles/bashrc ~/.bashrc
-ln -s ~/repos/dotfiles/dircolors ~/.dircolors
-ln -s ~/repos/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/repos/dotfiles/screenrc ~/.screenrc
-ln -s ~/repos/dotfiles/vimrc ~/.vimrc
+PWD=`pwd`
+echo $PWD
+
+ln -s $PWD/bashrc ~/.bashrc
+ln -s $PWD/bashprompt ~/.bashprompt
+ln -s $PWD/bash_aliases ~/.bash_aliases
+ln -s $PWD/bashrc ~/.bashrc
+ln -s $PWD/dircolors ~/.dircolors
+ln -s $PWD/gitconfig ~/.gitconfig
+ln -s $PWD/screenrc ~/.screenrc
+ln -s $PWD/vimrc ~/.vimrc
 
 source ~/.bashrc
