@@ -30,7 +30,4 @@ alias psmem='ps aux | sort -n -k 4'
 alias depdate='date "+%Y%m%d_%H%M%S" --utc'
 alias dotfiles='cd ~/repos/dotfiles'
 alias g='git'
-alias gs='git status'
-alias gcm='git commit -a -m '
-alias gpom='git push origin master'
 
