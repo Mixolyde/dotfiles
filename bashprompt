@@ -10,6 +10,7 @@ function prompt_command
   usernam=$(whoami)
   cur_tty=$(tty | sed -e "s/.*tty\(.*\)/\1/")
   newPWD="${PWD}"
+  # $(__git_ps1 " (%s)")
   gitBranch=$(git branch 2>/dev/null | grep '^\*' | cut -c3-)
   if [[ -z "$gitBranch" ]]; then
     gitBranch=" "
