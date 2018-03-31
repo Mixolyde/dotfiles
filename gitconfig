@@ -11,12 +11,14 @@
   c          = commit -a
   caa        = !git c --amend -C HEAD
   cm         = !git c -m
+  disc       = !git checkout -- 
   la         = "!git config -l | grep alias | cut -c 7-"
   pl         = log --graph --pretty=pformat
   pll        = !git pl --stat
   pom        = pull origin master
   s          = status
   today      = log --since=midnight --pretty=pformat
+  unstage    = !git reset HEAD
 [pretty]
   pformat    = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 

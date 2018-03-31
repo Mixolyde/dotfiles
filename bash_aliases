@@ -28,6 +28,6 @@ alias psmem='ps aux | sort -n -k 4'
 
 # development aliases
 alias depdate='date "+%Y%m%d_%H%M%S" --utc'
-alias dotfiles='cd ~/repos/dotfiles'
+alias dotfiles='cd ~/projects/dotfiles'
 alias g='git'
 
