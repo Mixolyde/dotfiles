@@ -83,3 +83,18 @@ map Q gq
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
               \ | wincmd p | diffthis
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'dart-lang/dart-vim-plugin'
+call plug#end()
+
+" Dart settings
+" let dart_html_in_string=true
+let dart_style_guide = 2
+let dart_format_on_save = 1
+
