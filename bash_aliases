@@ -2,7 +2,7 @@
 alias x=exit
 alias sdr='screen -D -R'
 alias slist='screen -list'
-alias du1='du -h --max-depth=1 |sort -rh'
+alias du1='du -h --max-depth=1 |sort -h'
 
 # editing
 alias vi='vim'
