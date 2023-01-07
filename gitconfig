@@ -11,7 +11,7 @@
   c          = commit -a
   caa        = !git c --amend -C HEAD
   cm         = !git c -m
-  co         = checkout
+  co         = !git checkout
   disc       = !git checkout -- 
   la         = "!git config -l | grep alias | cut -c 7-"
   pages      = push origin --set-upstream gh-pages

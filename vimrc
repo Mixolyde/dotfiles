@@ -14,6 +14,9 @@ set nowrap   " don't wrap by default
 set completeopt=menu,longest,preview
 set confirm
 set foldmethod=marker
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 "}}}
 
 "Leader {{{
@@ -91,7 +94,7 @@ nnoremap <Space> za
 "Commands {{{
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
               \ | wincmd p | diffthis
 "}}}
 
