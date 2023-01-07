@@ -11,13 +11,18 @@
   c          = commit -a
   caa        = !git c --amend -C HEAD
   cm         = !git c -m
+  co         = checkout
   disc       = !git checkout -- 
   la         = "!git config -l | grep alias | cut -c 7-"
+  pages      = push origin --set-upstream gh-pages
   pl         = log --graph --pretty=pformat
   pll        = !git pl --stat
   pom        = pull origin master
   s          = status
+  skip       = update-index --assume-unchanged
+  skips      = !git ls-files -v | egrep "^[hsmrck]"  
   today      = log --since=midnight --pretty=pformat
+  unskip     = update-index --no-assume-unchanged
   unstage    = !git reset HEAD
 [pretty]
   pformat    = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
