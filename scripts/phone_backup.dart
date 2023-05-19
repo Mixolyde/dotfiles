@@ -1,34 +1,30 @@
 import 'dart:io';
 
+//net use P: http://192.168.X.Y:8080
+
 Future<void> main() async {  
+  print("Current dir ${Directory.current}");
+  
   var now = new DateTime.now();
-  String dateStr = "${now.year}${now.month}${now.day}";
+  String dateStr = "${now.toString().substring(0, 10)}";
   print ("Date String: $dateStr");
   
-  // Phone Media Backup
-  File backupDrive = new File("/e");
-  if(! await backupDrive.exists()){
-    print("[!] Backup Drive not detected!");
-    exit(1);
-  }
-  
-  File phoneDrive = new File("/d");
-  if(! await phoneDrive.exists()){
-    print("[!] Phone Drive not detected!");
-    exit(1);
-  }
-  
 
+  detectDirectory("E:", "Backup Drive");
+  detectDirectory("P:", "Phone Drive");
   
   // destination directories
-  String destRoot = "/e/PhoneBackups/${dateStr}_A01_Phone";
-  String sourceRoot = "/d";
+  String destRoot = "E:\\PhoneBackups\\${dateStr}_G20_Phone";
+  String sourceRoot = "P:";
   List<List<String>> sourceDestPairs = [
-    ["$sourceRoot/Data/emu", "$destRoot/emu"],
-    ["$sourceRoot/Data/test", "$destRoot/Images/Camera"],
-    ["$sourceRoot/Data/test", "$destRoot/Images/WhatsApp Images"],
-    ["$sourceRoot/Data/test", "$destRoot/Video/Camera"],
-    ["$sourceRoot/Data/test", "$destRoot/Video/WhatsApp Video"],
+    ["$sourceRoot\\Emu", "$destRoot\\emu"],
+    ["$sourceRoot/DCIM", "$destRoot/Images"],
+    ["$sourceRoot/Pictures", "$destRoot/Images"],
+    ["$sourceRoot/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images", 
+      "$destRoot/Images/WhatsApp Images"],
+    ["$sourceRoot/Movies", "$destRoot/Video"],
+    ["$sourceRoot/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Video", 
+      "$destRoot/Video/WhatsApp Video"],
   ];
 
   //for each pair, robo copy source to dest
@@ -38,25 +34,51 @@ Future<void> main() async {
   
   //move
   //robocopy "$DestDirForCameraPhotos" "$DestDirForCameraVideo" "*.mp4" /np /MOVE
+  
+  print ("Backup complete!");
+  exit(0);
 
 }
 
 void copySourceToDest(String source, String dest) async {
   print("Copying from $source to $dest");
-  File sourceFile = new File(source);
-  if(! await sourceFile.exists()){
+  
+  Directory sourceDir = new Directory(source);
+  
+  if(! sourceDir.existsSync()){
     print("[!] Source folder $source not detected!");
+    return;
   }
   
-  File destFile = new File(dest);
-  await destFile.create(recursive: true);
+  Directory destDir = new Directory(dest);
+  if(! destDir.existsSync()){
+    print("Creating dest dir: $destDir");
+    destDir.createSync(recursive: true);
+  }
   
-  ProcessResult result = await Process.run(
-    "robocopy", 
-    [source, dest, "/e", "/w:1", "/np", "/nfl", "/ndl"]);
-print("Exit code: ${result.exitCode}");
+  if(! destDir.existsSync()){
+    print("[!] Could not create dest dir: $destDir!");
+    return;
+  }
+  
+  print("Running robocopy");
+  
+  final arguments = <String>[source, dest, "/e", "/w:1", "/np", "/nfl", "/ndl"];
+  
+  ProcessResult result = Process.runSync(
+    "robocopy", arguments);
+  print("Exit code: ${result.exitCode}");
 
   //robocopy "1" "2" /e /w:1 /np /nfl /ndl
+}
+
+void detectDirectory(String path, String name) {
+  Directory directory = new Directory(path);
+  if(! directory.existsSync()){
+    print("[!] $name not detected in $directory !");
+    exit(1);
+  }
+
 }
 
 
