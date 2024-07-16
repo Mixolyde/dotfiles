@@ -1,7 +1,7 @@
 REM Update latest dotfiles from git
 
-rm %HOME%\_vimrc %HOME%\_gvimrc
+rm %USERPROFILE%\_vimrc %USERPROFILE%\_gvimrc
 
-cp  %HOME%\Documents\GitHub\dotfiles\vimrc %HOME%\_vimrc
-cp  %HOME%\Documents\GitHub\dotfiles\gvimrc %HOME%\_gvimrc
+cp  %USERPROFILE%\Documents\GitHub\dotfiles\vimrc %USERPROFILE%\_vimrc
+cp  %USERPROFILE%\Documents\GitHub\dotfiles\gvimrc %USERPROFILE%\_gvimrc
 
