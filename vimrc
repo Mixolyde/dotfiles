@@ -1,4 +1,5 @@
-" File: vimrc (copy to ~/.vimrc or ~\_vimrc
+" File: vimrc (copy to ~/.vimrc or ~\_vimrc)
+" mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo ~/.vim/plugged
 " Author: Brian G.
 
 "Basics {{{

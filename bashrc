@@ -1,16 +1,12 @@
 # .bashrc
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+test -f /etc/bashrc && . /etc/bashrc
 
 set -o ignoreeof
 
 export EDITOR=vim
 export PATH=/usr/local/bin:~/bin:$PATH
-
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -43,13 +39,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
+test -f ~/.bash_aliases && . ~/.bash_aliases
 
-if [ -f ~/.bashprompt ]; then
-  . ~/.bashprompt
-fi
+test -f ~/.bashprompt && . ~/.bashprompt
 
 # User functions
 # tarfold will tar and gzip a full directory by name, appending the date
@@ -61,6 +53,4 @@ function tarfold {
 };
 
 # run bash_local last in case it has to overwrite
-if [ -f ~/.bash_local ]; then
-  . ~/.bash_local
-fi
+test -f ~/.bash_local &&. ~/.bash_local
