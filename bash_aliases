@@ -5,8 +5,9 @@ alias slist='screen -list'
 alias du1='du -h --max-depth=1 |sort -h'
 
 # editing
-alias vi='vim'
-alias edit='vim'
+alias vi='nvim'
+alias vim='nvim'
+alias edit='nvim'
 
 # reload bash scripts
 alias sbash='. ~/.bashrc'
@@ -31,3 +32,17 @@ alias depdate='date "+%Y%m%d_%H%M%S" --utc'
 alias dotfiles='cd ~/projects/dotfiles'
 alias g='git'
 
+# bashrc stuff to not overwrite system default bashrc
+test -f ~/.bashprompt && . ~/.bashprompt
+
+# User functions
+# tarfold will tar and gzip a full directory by name, appending the date
+function tarfold {
+  directory=`echo "$1" | sed 's/\/\+$//'`;
+  tarname=$directory.`date '+%Y%m%d-%H%M --utc'`.tar.gz
+  tar -cvzf $tarname $directory;
+  echo "$directory tar'd and gzip'd to $tarname"
+};
+
+# run bash_local last in case it has to overwrite
+test -f ~/.bash_local &&. ~/.bash_local
