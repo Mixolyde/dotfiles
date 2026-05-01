@@ -1,0 +1,64 @@
+# general info
+kubectl cluster-info
+kubectl cluster-info dump
+
+# check nodes
+kubectl get componentstatuses
+kubectl get nodes
+kubectl describe node <node-name>
+
+# check deployments
+kubectl get deployments
+kubectl describe deployment <deployment-name>
+
+# check pods
+kubectl get pods
+kubectl get pods -o wide
+kubectl describe pod <pod-name>
+
+# increase verbosity
+kubectl get pods -v=8
+
+# check logs
+kubectl logs <pod-name>
+kubectl logs <pod-name> -c <container-name>
+
+# check services
+kubectl get svc
+kubectl describe svc <service-name>
+
+# check context
+kubectl config get-contexts
+kubectl config current-context
+
+# inspect cluster endpoint
+kubectl config view --minify
+kubectl get endpoints
+kubectl describe endpoints <service-name>
+
+# check ingress
+kubectl get ingress
+kubectl describe ingress <ingress-name>
+
+# run temporary debug pod
+kubectl run debug --rm -it --image=busybox -- /bin/sh
+wget -qO- http://<service-name>:<port>
+
+# check events
+kubectl get events --sort-by=.metadata.creationTimestamp
+
+# bypass ingress and service with port forward
+kubectl port-forward pod/<pod-name> 8080:80
+http://localhost:8080
+
+# configmaps/secrets
+kubectl get configmaps
+kubectl describe configmap <configmap-name>
+kubectl get secrets
+
+# a practical debug flow order
+kubectl get pods
+kubectl logs
+kubectl get svc
+kubectl get endpoints
+kubectl get ingress
