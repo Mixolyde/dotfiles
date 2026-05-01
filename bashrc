@@ -53,4 +53,4 @@ function tarfold {
 };
 
 # run bash_local last in case it has to overwrite
-test -f ~/.bash_local &&. ~/.bash_local
+test -f ~/.bash_local && . ~/.bash_local
