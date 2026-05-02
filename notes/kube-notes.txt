@@ -13,6 +13,7 @@ kubectl describe deployment <deployment-name>
 
 # check pods
 kubectl get pods
+kubectl get pods -n <namespace>
 kubectl get pods -o wide
 kubectl describe pod <pod-name>
 
